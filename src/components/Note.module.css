@@ -1,8 +1,17 @@
 .note {
+    display: flex;
+    justify-content: space-between;
     width: 80%;
     margin: 8px auto;
     padding: 0 10px;
     border: 2px solid grey;
     border-radius:10px;
     background-color: rgb(243, 240, 240);
+}
+.btn {
+    border: none;
+    outline: none;
+    background-color:#F3F0F0;
+    font-weight: bold;
+    font-family: 'Short Stack', cursive;
 }

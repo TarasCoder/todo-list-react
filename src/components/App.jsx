@@ -12,13 +12,19 @@ function App() {
       return [...prev, name];
     });
   }
-
+  function deleteBtn(id) {
+    setNotes((prev) => {
+      return prev.filter((note, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div className={s.container}>
       <Header />
       <Input addNote={addNoteFn} />
       {notes.map((item, index) => {
-        return <Note key={index} id={index} newNote={item} />;
+        return <Note key={index} id={index} newNote={item} del={deleteBtn} />;
       })}
     </div>
   );
