@@ -9,6 +9,7 @@
     background-color: rgb(243, 240, 240);
 }
 .btn {
+    cursor: pointer;
     border: none;
     outline: none;
     background-color:#F3F0F0;
