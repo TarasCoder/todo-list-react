@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+body {
+  background-color: rgb(235, 233, 233);
+  color: white;
+  font-family: 'Short Stack', cursive;
+}
+
+.container {
+  width: 400px;
+  /* height: 700px; */
+  border: 5px solid rgb(8, 8, 8);
+  border-radius: 20px;
+  margin: 20px auto;
+  padding-bottom: 15px;
+  background-color: rgb(245, 243, 225);
+  color: #000;
+  overflow: hidden;
+}
