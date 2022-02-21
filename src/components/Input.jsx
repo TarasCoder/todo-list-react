@@ -1,5 +1,7 @@
 import { useState } from "react";
 import s from "./Input.module.css";
+import AddIcon from '@mui/icons-material/Add';
+import IconButton from '@mui/material/IconButton';
 
 const Input = (props) => {
   const [name, handleChange] = useState("");
@@ -23,9 +25,10 @@ const Input = (props) => {
           placeholder="Enter your note: "
           value={name}
         />
-        <button className={s.enterBtn} onClick={clickHandle} type="submit">
-          +
-        </button>
+
+        <IconButton aria-label="delete" disabled={!name} className={s.enterBtn} onClick={clickHandle} type="submit">
+          <AddIcon />
+        </IconButton>
       </form>
     </div>
   );
