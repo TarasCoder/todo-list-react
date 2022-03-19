@@ -2,6 +2,8 @@ import { useState } from "react";
 import s from "./Input.module.css";
 import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
+import db from "../firebase";
+import firebase from "firebase"
 
 const Input = (props) => {
   const [name, handleChange] = useState("");
@@ -9,6 +11,11 @@ const Input = (props) => {
   const clickHandle = (ev) => {
     ev.preventDefault();
     props.addNote(name);
+
+    db.collection("todos").add({
+      name: name,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
     handleChange("");
   };
   const changeName = (ev) => {
