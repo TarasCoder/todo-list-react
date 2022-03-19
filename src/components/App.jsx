@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     db.collection("todos").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
-      setNotes(snapshot.docs.map((doc) => doc.data().name));
+      setNotes(snapshot.docs.map((doc) => ({id: doc.id, name: doc.data().name})));
     });
   }, []);
 
@@ -20,19 +20,13 @@ function App() {
       return [...prev, name];
     });
   }
-  function deleteBtn(id) {
-    setNotes((prev) => {
-      return prev.filter((note, index) => {
-        return index !== id;
-      });
-    });
-  }
+
   return (
     <div className={s.container}>
       <Header />
       <Input addNote={addNoteFn} />
       {notes.map((item, index) => {
-        return <Note key={index} id={index} newNote={item} del={deleteBtn} />;
+        return <Note key={index} newNote={item} />
       })}
     </div>
   );
